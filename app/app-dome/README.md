@@ -25,13 +25,13 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### ==技术介绍==
 |--|--vuex、router、axios、ES5/6、scss、transition动画--|--|
 ### ==项目开发==
-|--build
-|--config
-|--node_modules
-|--src
-|--|--api:封装的接口文件
-|--|--assets:放置一些图片,如logo等,存放静态资源(图片、字体等)
-|--|--components:存放的公共组件（弹框，遮罩层）
+|--build    
+|--config   
+|--node_modules    
+|--src     
+|--|--api:封装的接口文件    
+|--|--assets:放置一些图片,如logo等,存放静态资源(图片、字体等)    
+|--|--components:存放的公共组件（弹框，遮罩层）    
 |--|--plugins:存放封装插件的（头部和报错弹框）
 |--|--router:路由
 |--|--static:存放的sass
