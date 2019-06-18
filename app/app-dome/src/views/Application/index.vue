@@ -105,8 +105,12 @@
 </template>
 
 <script>
+import alertBox from "../../components/alertBox";
 import request from "@/utils/request";
 export default {
+    components:{
+        alertBox
+    },
     data() {
         return {
             nums:"",
@@ -155,16 +159,15 @@ export default {
         let tokens = window.localStorage.getItem("token");
         request.get("/api/user/info");
         this.getUser(tokens);
-    }
-    ,
- beforeRouteLeave(to, from, next) {
- if (to.path == "/home") {
- to.meta.keepAlive = false;
- } else {
- to.meta.keepAlive = true;
- }
- next();
- },
+    },
+    beforeRouteLeave(to, from, next) {
+        if (to.path == "/home") {
+            to.meta.keepAlive = false;
+        } else {
+            to.meta.keepAlive = true;
+        }
+        next();
+    }, 
     methods:{
         getUser(tokens){
             this.$store.dispatch("getUser",tokens)
@@ -210,7 +213,7 @@ export default {
                     }
                 })
             }else{
-                alert("提交失败");
+                this.$alert("提交失败");
             }
         }
     }
